@@ -6,7 +6,7 @@ import { ProductsModule } from './products/products.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost/fashion-sales-chatbot'), // URL kết nối MongoDB
+    MongooseModule.forRoot(process.env.MONGO_URI || 'mongodb://localhost/fashion-sales-chatbot'),
     ProductsModule,
   ],
   controllers: [AppController],
